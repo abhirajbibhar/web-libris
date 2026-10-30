@@ -1,0 +1,9 @@
+node_modules/
+.tanstack/
+.output/
+dist/
+.data/
+.tmp-test/
+.env
+*.local
+*.tsbuildinfo

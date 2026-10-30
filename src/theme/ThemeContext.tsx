@@ -12,7 +12,7 @@ import { PrimeReactContext } from 'primereact/api';
 
 export type ThemeMode = 'light' | 'dark';
 
-const STORAGE_KEY = 'booklore.theme';
+const STORAGE_KEY = 'web-libris.theme';
 const THEME_LINK_ID = 'theme-link';
 const THEME_FILE: Record<ThemeMode, string> = {
   light: 'lara-light-amber',

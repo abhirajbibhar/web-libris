@@ -61,7 +61,7 @@ export function loadFoliate(): Promise<void> {
   if (foliateLoading) return foliateLoading;
 
   foliateLoading = new Promise<void>((resolve, reject) => {
-    const existing = document.querySelector<HTMLScriptElement>('script[data-booklore-foliate]');
+    const existing = document.querySelector<HTMLScriptElement>('script[data-web-libris-foliate]');
     if (existing) {
       existing.addEventListener('load', () => resolve());
       existing.addEventListener('error', () => reject(new Error('Failed to load the EPUB engine')));
@@ -70,7 +70,7 @@ export function loadFoliate(): Promise<void> {
     const script = document.createElement('script');
     script.type = 'module';
     script.src = '/foliate/view.js';
-    script.dataset.bookloreFoliate = 'true';
+    script.dataset.webLibrisFoliate = 'true';
     script.onload = () => resolve();
     script.onerror = () => reject(new Error('Failed to load the EPUB engine'));
     document.head.appendChild(script);

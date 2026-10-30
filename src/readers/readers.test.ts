@@ -189,7 +189,7 @@ describe('loadReaderSettings', () => {
 
   it('merges stored preferences over defaults', () => {
     store.set(
-      'booklore.reader.settings.v1',
+      'web-libris.reader.settings.v1',
       JSON.stringify({ epub: { theme: 'night' }, nonsense: true })
     );
     const settings = loadReaderSettings();
@@ -199,7 +199,7 @@ describe('loadReaderSettings', () => {
   });
 
   it('falls back to defaults on corrupt JSON', () => {
-    store.set('booklore.reader.settings.v1', '{not json');
+    store.set('web-libris.reader.settings.v1', '{not json');
     expect(loadReaderSettings()).toEqual(DEFAULT_READER_SETTINGS);
   });
 });

@@ -105,7 +105,7 @@ async function signToken(
   return new SignJWT({ username: user.username, type, ver: user.tokenVersion ?? 0 } satisfies Partial<TokenPayload>)
     .setProtectedHeader({ alg: 'HS256' })
     .setSubject(String(user.id))
-    .setIssuer('booklore')
+    .setIssuer('web-libris')
     .setIssuedAt()
     .setExpirationTime(ttl)
     .sign(await hmacKey(secret));
@@ -125,7 +125,7 @@ export async function verifyToken(
   expectedType: 'access' | 'refresh'
 ): Promise<TokenPayload> {
   const { payload } = await jwtVerify(token, await hmacKey(await jwtSecret(env)), {
-    issuer: 'booklore'
+    issuer: 'web-libris'
   });
   const typed = payload as TokenPayload;
   if (typed.type !== expectedType) {

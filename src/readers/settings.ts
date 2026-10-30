@@ -44,7 +44,7 @@ export const DEFAULT_READER_SETTINGS: ReaderSettings = {
   pdf: { fit: 'page', zoom: 1 }
 };
 
-const STORAGE_KEY = 'booklore.reader.settings.v1';
+const STORAGE_KEY = 'web-libris.reader.settings.v1';
 
 function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);

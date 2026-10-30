@@ -52,17 +52,17 @@ export default function BookBrowserPage() {
 
   const [search, setSearch] = useState('');
   const [filters, setFilters] = useState<FilterSelection>({});
-  const [sortField, setSortField] = useState<SortField>(() => stored('booklore-sort-field', 'title') as SortField);
-  const [sortDir, setSortDir] = useState<SortDirection>(() => stored('booklore-sort-dir', 'asc') as SortDirection);
-  const [viewMode, setViewMode] = useState<'grid' | 'table'>(() => stored('booklore-view-mode', 'grid') as 'grid' | 'table');
+  const [sortField, setSortField] = useState<SortField>(() => stored('web-libris-sort-field', 'title') as SortField);
+  const [sortDir, setSortDir] = useState<SortDirection>(() => stored('web-libris-sort-dir', 'asc') as SortDirection);
+  const [viewMode, setViewMode] = useState<'grid' | 'table'>(() => stored('web-libris-view-mode', 'grid') as 'grid' | 'table');
   const [filterPanelOpen, setFilterPanelOpen] = useState(false);
   const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
   const [assignerOpen, setAssignerOpen] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('booklore-sort-field', sortField);
-    localStorage.setItem('booklore-sort-dir', sortDir);
-    localStorage.setItem('booklore-view-mode', viewMode);
+    localStorage.setItem('web-libris-sort-field', sortField);
+    localStorage.setItem('web-libris-sort-dir', sortDir);
+    localStorage.setItem('web-libris-view-mode', viewMode);
   }, [sortField, sortDir, viewMode]);
 
   const entityType: EntityType = shelfId

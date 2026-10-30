@@ -17,7 +17,7 @@ import Topbar from './Topbar';
  * topbar; the choice is persisted). Mobile: the menu slides in as a
  * PrimeReact Sidebar drawer.
  */
-const SIDEBAR_COLLAPSED_KEY = 'booklore.sidebar.collapsed';
+const SIDEBAR_COLLAPSED_KEY = 'web-libris.sidebar.collapsed';
 
 export default function AppLayout() {
   const { pathname } = useLocation();
@@ -56,7 +56,7 @@ export default function AppLayout() {
     setMobileNavOpen(false);
   }, [pathname]);
 
-  const brandTitle = user?.username ?? 'Web Libris';
+  const brandTitle = 'Web Libris';
 
   // Fixed to the viewport so the document itself never scrolls: mobile address-bar
   // resizing and overlay scroll-chaining would otherwise move the header with the page.

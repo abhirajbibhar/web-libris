@@ -29,7 +29,7 @@ const queryClient = new QueryClient({
 const THEME_BOOTSTRAP = `(function () {
   var mode = 'light';
   try {
-    var stored = localStorage.getItem('booklore.theme');
+    var stored = localStorage.getItem('web-libris.theme');
     mode = stored === 'dark' || (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
   } catch (e) {}
   var link = document.createElement('link');
